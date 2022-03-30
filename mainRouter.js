@@ -1,7 +1,7 @@
 const {Router} = require('express');
 const router = Router();
-const db = require('./database');
-const bcrypt = require('bcrypt');
+
+const userController = require('./controllers/userController');
 
 router.get('/isConnected', (req,res) => {
     if(req.session.user){
@@ -14,5 +14,7 @@ router.get('/isConnected', (req,res) => {
     }
     //boardRouter.get('/', isAdmin, cache, mainController.findAll(Board));
 })
+
+router.post('/users/signUp',userController.signUp);
 
 module.exports = router;

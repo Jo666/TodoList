@@ -2,10 +2,9 @@ import React from 'react';
 import ReactDOM, { render } from "react-dom";
 import {useState,useEffect} from 'react';
 import { BrowserRouter,Routes,Route,Redirect } from 'react-router-dom'
+import LoginForm from './components/LoginForm'
 
-const TestRouter = () => (<h1>Page 1</h1>)
-
-const TestRouter2 = () => (<main><h1>Page 2</h1></main>)
+const TestRouter = () => (<main><h1>Page 1</h1></main>)
 
 const App = () => {
 
@@ -14,8 +13,8 @@ const App = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/home" element={<TestRouter />} />
-                <Route exact path = "/" element={<TestRouter2 />} />
+                <Route path="/home" element={<LoginForm />} />
+                <Route exact path = "/" element={<TestRouter />} />
             </Routes>
         </BrowserRouter>
     );

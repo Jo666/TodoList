@@ -10,7 +10,7 @@ const host = process.env.host
 const session = require('express-session');
 
 app.use(express.json()); // parse les requêtes au format json (accès à req.body.name....)   (sans "urlencoded" les infos d'une requête POST d'un form html ne sont pas parsées)
-//app.use(express.urlencoded()); // pour parser les requêtes en strings ou arrays       (pour les forms html)
+app.use(express.urlencoded({extended:true})); // pour parser les requêtes en strings ou arrays       (pour les forms html)
 
 app.use(cors({
     origin:'http://localhost:1234',
